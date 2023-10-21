@@ -1,0 +1,15 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+import pandas as pd
+
+# Ler dados do Blob Storage
+dados = pd.read_csv('numeros_pares.csv')
+
+# Realizar transformações
+dados_transformados = dados.dropna()
+
+# Salvar dados transformados no Blob Storage
+dados_transformados.to_csv('dados_transformados.csv', index=False)
